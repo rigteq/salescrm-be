@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    # Neon connection details come from the environment only. No inline
+    # defaults — a missing var fails fast at startup rather than silently
+    # falling back to a committed credential. This file is gitignored; see
+    # application-neon.yml.example for the template.
+    url: ${SALESCMS_DB_URL}
+    username: ${SALESCMS_DB_USERNAME}
+    password: ${SALESCMS_DB_PASSWORD}

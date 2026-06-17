@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: salescms
+  profiles:
+    default: local
+  config:
+    # Loads backend/.env (gitignored) as a properties source when present.
+    # "optional:" means local/CI runs without the file fall back to the
+    # defaults below; secrets never live in this committed file.
+    import: optional:file:.env[.properties]
+  datasource:
+    # Override via backend/.env (SALESCMS_DB_*); defaults to local Postgres.
+    url: ${SALESCMS_DB_URL:jdbc:postgresql://ep-gentle-thunder-aiqp8rwj-pooler.c-4.us-east-1.aws.neon.tech/neondb?&sslmode=require&channelBinding=require}
+    username: ${SALESCMS_DB_USERNAME:neondb_owner}
+    password: ${SALESCMS_DB_PASSWORD:npg_J1dAyeSGCK6h}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+
+
+server:
+  port: 8080
+  error:
+    include-message: always
+
+salescms:
+  jwt:
+    # Dev-only secret; override via SALESCMS_JWT_SECRET in any real deployment.
+    secret: ${SALESCMS_JWT_SECRET:dev-secret-change-me-dev-secret-change-me-0123456789}
+    issuer: salescms
+    access-token-minutes: 480
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    persist-authorization: true
+    path: /swagger-ui.html
+    operationsSorter: method
+  api-docs:
+    path: /v3/api-docs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

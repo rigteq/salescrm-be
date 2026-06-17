@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: ${SALESCMS_DB_URL:jdbc:postgresql://ep-gentle-thunder-aiqp8rwj-pooler.c-4.us-east-1.aws.neon.tech/neondb?&sslmode=require&channelBinding=require}
+    username: ${SALESCMS_DB_USERNAME:neondb_owner}
+    password: ${SALESCMS_DB_PASSWORD:npg_J1dAyeSGCK6h}
