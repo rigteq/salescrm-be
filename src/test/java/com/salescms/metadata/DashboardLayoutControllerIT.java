@@ -1,10 +1,11 @@
 package com.salescms.metadata;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.salescms.platform.audit.AuditService;
-import com.salescms.platform.auth.User;
-import com.salescms.platform.rbac.RbacCatalog;
-import com.salescms.platform.tenancy.TenantContext;
+import com.salescms.service.AuditService;
+import com.salescms.controller.DashboardLayoutController;
+import com.salescms.entity.User;
+import com.salescms.dto.RbacCatalog;
+import com.salescms.entity.TenantContext;
 import com.salescms.support.AbstractPostgresIT;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,3 +55,4 @@ class DashboardLayoutControllerIT extends AbstractPostgresIT {
         assertThat(auditCount).isEqualTo(2);
     }
 }
+

@@ -1,9 +1,10 @@
 package com.salescms.metadata;
 
-import com.salescms.metadata.MetadataDtos.RecordDto;
-import com.salescms.metadata.MetadataDtos.RecordRequest;
-import com.salescms.platform.common.BadRequestException;
+import com.salescms.dto.MetadataDtos.RecordDto;
+import com.salescms.dto.MetadataDtos.RecordRequest;
+import com.salescms.exception.BadRequestException;
 import com.salescms.support.AbstractPostgresIT;
+import com.salescms.service.DynamicRecordService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -87,3 +88,5 @@ class DynamicRecordServiceIT extends AbstractPostgresIT {
                 .contains(created.id());
     }
 }
+
+

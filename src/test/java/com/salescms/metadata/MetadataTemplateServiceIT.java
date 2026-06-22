@@ -1,6 +1,8 @@
 package com.salescms.metadata;
 
 import com.salescms.support.AbstractPostgresIT;
+import com.salescms.repository.CustomFieldRepository;
+import com.salescms.repository.TenantModuleRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -39,3 +41,4 @@ class MetadataTemplateServiceIT extends AbstractPostgresIT {
         assertThat(industry).isEqualTo(1);
     }
 }
+

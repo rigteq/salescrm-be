@@ -1,6 +1,7 @@
 package com.salescms.metadata;
 
-import com.salescms.platform.common.BadRequestException;
+import com.salescms.exception.BadRequestException;
+import com.salescms.service.DynamicRecordService;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -35,3 +36,4 @@ class MetadataNormalizationTest {
                 .isInstanceOf(BadRequestException.class);
     }
 }
+

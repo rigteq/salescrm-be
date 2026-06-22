@@ -1,12 +1,12 @@
 package com.salescms.support;
 
-import com.salescms.metadata.MetadataTemplateService;
-import com.salescms.platform.auth.Tenant;
-import com.salescms.platform.auth.TenantRepository;
-import com.salescms.platform.auth.User;
-import com.salescms.platform.auth.UserRepository;
-import com.salescms.platform.rbac.RbacCatalog;
-import com.salescms.platform.tenancy.TenantContext;
+import com.salescms.service.MetadataTemplateService;
+import com.salescms.entity.Tenant;
+import com.salescms.repository.TenantRepository;
+import com.salescms.entity.User;
+import com.salescms.repository.UserRepository;
+import com.salescms.dto.RbacCatalog;
+import com.salescms.entity.TenantContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,3 +64,4 @@ public abstract class AbstractPostgresIT {
         return tenant.getId();
     }
 }
+

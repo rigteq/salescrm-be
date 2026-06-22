@@ -1,12 +1,13 @@
 package com.salescms.crm.imports;
 
-import com.salescms.metadata.CustomField;
-import com.salescms.metadata.CustomFieldRepository;
-import com.salescms.metadata.DynamicRecordService;
-import com.salescms.metadata.MetadataDtos.RecordDto;
-import com.salescms.metadata.MetadataDtos.RecordRequest;
-import com.salescms.platform.audit.AuditService;
-import com.salescms.platform.tenancy.TenantContext;
+import com.salescms.entity.CustomField;
+import com.salescms.repository.CustomFieldRepository;
+import com.salescms.service.DynamicRecordService;
+import com.salescms.dto.MetadataDtos.RecordDto;
+import com.salescms.dto.MetadataDtos.RecordRequest;
+import com.salescms.controller.ImportController;
+import com.salescms.service.AuditService;
+import com.salescms.entity.TenantContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -143,3 +144,5 @@ class ImportControllerTest {
         assertThat(sent.customValues()).doesNotContainKey("company_name");
     }
 }
+
+

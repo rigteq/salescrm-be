@@ -1,8 +1,9 @@
 package com.salescms.payment;
 
-import com.salescms.platform.audit.AuditService;
-import com.salescms.platform.common.BadRequestException;
-import com.salescms.platform.tenancy.TenantContext;
+import com.salescms.service.AuditService;
+import com.salescms.controller.FinanceController;
+import com.salescms.exception.BadRequestException;
+import com.salescms.entity.TenantContext;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -232,3 +233,4 @@ class FinanceControllerTest {
         }
     }
 }
+

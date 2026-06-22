@@ -1,7 +1,8 @@
 package com.salescms.platform.rbac;
 
-import com.salescms.platform.rbac.RbacCatalog.PermissionSeed;
-import com.salescms.platform.rbac.RbacCatalog.RoleSeed;
+import com.salescms.dto.RbacCatalog.PermissionSeed;
+import com.salescms.dto.RbacCatalog.RoleSeed;
+import com.salescms.dto.RbacCatalog;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -108,3 +109,4 @@ class RbacCatalogTest {
                 assertThat(code).matches(".*_(CREATE|UPDATE|DELETE|ASSIGN|IMPORT|SEND|MANAGE)$"));
     }
 }
+
